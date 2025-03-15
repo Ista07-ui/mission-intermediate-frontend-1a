@@ -16,7 +16,7 @@ section {
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0.8) 100%
     ),
-    url("../assets/bg-1.jpg");
+    url("../images/bg-1.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -44,7 +44,7 @@ section {
 }
 
 .frameText {
-  color: white;
+  color: #ffffff;
   text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -60,11 +60,12 @@ section {
 .frameButton {
   background: #3ecf4c;
   border-radius: 10px;
-  padding: 0.7rem 2rem !important;
+  padding: 0.7rem 1rem !important;
   max-width: 20rem;
   width: 100%;
   text-align: center;
   margin: auto;
+  font-size: 14px;
 }
 
 .buttonText {
@@ -100,7 +101,7 @@ section {
 
 .cardTextSubtitle {
   color: #333333;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -161,7 +162,7 @@ section {
 .card-item {
   width: 100%;
   padding: 20px;
-  background: white;
+  background: #ffffff;
   border-radius: 10px;
   border: 1px rgba(58, 53, 65, 0.12) solid;
   flex-direction: column;
@@ -290,7 +291,7 @@ section {
       rgba(0, 0, 0, 0.8) 0%,
       rgba(0, 0, 0, 0.8) 100%
     ),
-    url("../assets/bg-2.jpg");
+    url("../images/bg-2.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0px 12px 45px -10px rgba(0, 59, 222, 0.2);
@@ -346,15 +347,23 @@ section {
 
 .frame-Email {
   align-self: stretch;
-  padding-top: 8px;
+  /* padding-top: 8px;
   padding-bottom: 8px;
-  padding-left: 32px;
+  padding-left: 32px; */
   padding-right: 8px;
   background: #ffffff;
   border-radius: 10px;
   align-items: center;
   gap: 20px;
   display: inline-flex;
+}
+
+.frame-Email button {
+  padding: 0.5rem 1rem !important;
+  background: #ffbd3a;
+  border-radius: 10px;
+  border: 0;
+  margin: 0 !important;
 }
 
 footer {
@@ -374,6 +383,7 @@ footer {
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
+  width: 100%;
 }
 
 .footer-menu {
@@ -543,7 +553,7 @@ footer {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #ffffff;
 }
 
 /* Show the dropdown menu on hover */

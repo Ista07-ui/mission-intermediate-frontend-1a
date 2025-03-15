@@ -103,7 +103,12 @@ function Home() {
                       />
                     </div>
                     <div>
-                      <img alt="" src="./icons/maskedStar.png" />
+                      <img
+                        style={{ width: "22px", height: "22px" }}
+                        className="star-img"
+                        alt=""
+                        src="./icons/maskedStar.png"
+                      />
                     </div>
                     <div>
                       <img
@@ -169,6 +174,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -239,6 +245,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -309,6 +316,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -378,6 +386,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -447,6 +456,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -516,6 +526,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -585,6 +596,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -621,7 +633,11 @@ function Home() {
                 </p>
               </div>
               <div className="card-avatar">
-                <img alt="" className="avatar-img" src="/images/woman.jpg" />
+                <img
+                  alt=""
+                  className="avatar-img"
+                  src="./icons/Avatar (9).png"
+                />
                 <div className="avatar-cardLittle">
                   <p className="avatar-title">Jenna Ortega</p>
                   <div className="avatar-little">
@@ -650,6 +666,7 @@ function Home() {
                     </div>
                     <div>
                       <img
+                        style={{ width: "22px", height: "22px" }}
                         className="star-img"
                         src="./icons/maskedStar.png"
                         alt=""
@@ -704,16 +721,10 @@ function Home() {
                   }}
                   placeholder="Masukkan Emailmu"
                 />
-                <button
-                  type="button"
-                  style={{
-                    padding: "8px 16px !important",
-                    background: " #ffbd3a",
-                    borderRadius: "10px",
-                    border: 0,
-                  }}
-                >
-                  <p>Subscribe</p>
+                <button type="button">
+                  <p style={{ color: "#ffffff", letterSpacing: "0.2px" }}>
+                    Subscribe
+                  </p>
                 </button>
               </div>
             </div>
