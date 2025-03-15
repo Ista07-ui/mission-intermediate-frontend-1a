@@ -1,0 +1,208 @@
+@import "./colors.css";
+@import "./typography.css";
+
+.main-box {
+  margin: 120px auto;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+  padding: 36px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-box-title {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+}
+
+.title {
+  margin: auto;
+  padding: 1rem 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.description {
+  color: var(--text-dark-secondary);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+
+.litleicon {
+  color: #d32e1f;
+  font-weight: blod;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.main-box-content {
+  margin-top: 24px;
+  display: flex;
+  padding: 35.3px;
+  flex-direction: column;
+  gap: 37px;
+  border: none;
+  color: var(--text-dark-secondary);
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  color: #4a505c;
+}
+
+.box-input span {
+  text-align: right;
+}
+
+.boxformInput {
+  border: 1px solid #f1f1f1;
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  color: #424242;
+  background-color: transparent;
+}
+
+.box-input-password {
+  position: relative;
+  display: flex;
+  margin-top: 5px;
+}
+
+.box-input-password input {
+  width: 100%;
+  margin: 0;
+}
+
+.box-input img {
+  width: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.forgotPassword {
+  text-decoration: none;
+  margin-left: auto;
+  color: var(--text-dark-secondary);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.box-login-register {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#tombol-masuk {
+  background-color: #3ecf4c;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border: 0;
+  border-radius: 8px;
+  padding: 4px 0;
+}
+
+#tombol-daftar {
+  background-color: #e2fcd9;
+  color: #3ecf4c;
+  font-weight: 600;
+  font-size: 16px;
+  border: 0;
+  border-radius: 8px;
+  padding: 4px 0;
+}
+
+#tombol-google {
+  border-radius: 8px;
+  padding: 4px 0;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #4a505c;
+}
+
+#tombol-google img {
+  width: 15px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4a505c;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
+
+.phone-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.phone-input input {
+  width: 100%;
+}
+
+.phone-country-flag {
+  display: flex;
+  border: 1px solid #f1f1f1;
+  margin-top: 7px;
+  height: 48px;
+  color: var(--text-dark-secondary);
+  font-weight: 400;
+  width: 20%;
+}
+
+.phone-country-flag img {
+  width: 2rem;
+  position: relative;
+  right: 0;
+}
+
+.phone-country-flag select {
+  display: flex;
+  padding: 2px;
+  height: 100%;
+  border: 0;
+}

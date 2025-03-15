@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-bar {
+  width: 1440px;
+  height: 80px;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.navigation-bar-container {
+  max-width: 85vw;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  align-items: center;
+}
+
+.logo {
+  width: 237px;
+  height: 56px;
+  padding: 12px;
+}
+
+main {
+  margin: auto;
+  width: 1440px;
+  padding: 120px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fffdf3;
+}
+
+input {
+  width: 518px;
+  height: 48px;
+  margin-top: 7px;
+}
+
+button {
+  padding: 7px 0px !important;
+  cursor: pointer;
+}
+
+.navigation-bar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navigation-bar-links a {
+  text-decoration: none;
+  color: #222325;
+}
+
+.navigation-bar-links:hover {
+  text-decoration: underline;
+}
+
+.navigation-bar-links img {
+  width: 30px;
+  border-radius: 30px;
+}
+
+/* width under 800px should use lower font size */
+@media (max-width: 800px) {
+  .navigation-bar-container {
+    font-size: 0.8em;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  p {
+    font-size: 1rem !important;
+  }
+}

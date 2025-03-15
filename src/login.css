@@ -1,0 +1,184 @@
+.main-box {
+  margin: auto;
+  width: 596px;
+  height: 617px;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+  padding: 36px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-box-title {
+  width: 525px;
+  height: 67px;
+  padding: 15px;
+  text-align: center;
+}
+
+main {
+  height: 944px !important;
+}
+
+.title {
+  width: 246px;
+  height: 35px;
+  margin: auto;
+  padding: 25px;
+}
+
+.description {
+  color: var(--text-dark-secondary);
+  width: 525px;
+  height: 22px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+
+.litleicon {
+  color: #d32e1f;
+  font-weight: blod;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.main-box-content {
+  width: 518px;
+  height: 442px;
+  margin-top: 24px;
+  display: flex;
+  padding: 35.3px;
+  flex-direction: column;
+  gap: 37px;
+  border: none;
+  color: var(--text-dark-secondary);
+}
+
+.box-input {
+  width: 518px;
+  height: 76px;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #4a505c;
+}
+
+.box-input span {
+  text-align: right;
+}
+
+.boxformInput {
+  border: 1px solid #f1f1f1;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+  color: #424242;
+  background-color: transparent;
+}
+
+.box-input-password {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.box-input-password input {
+  width: 100%;
+}
+
+.box-input img {
+  width: 22px;
+  height: 19px;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.forgotPassword {
+  text-decoration: none;
+  margin-left: auto;
+  color: #4a505c;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22.4px;
+  letter-spacing: 0.2px;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.box-login-register {
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  gap: 10px;
+}
+
+#tombol-masuk {
+  background-color: #3ecf4c;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 16px;
+  border: 0;
+  border-radius: 8px;
+  padding: 4px 0;
+}
+
+#tombol-daftar {
+  background-color: #e2fcd9;
+  color: #3ecf4c;
+  font-weight: 600;
+  font-size: 16px;
+  border: 0;
+  border-radius: 8px;
+  padding: 4px 0;
+}
+
+#tombol-google {
+  border: 0;
+  border-radius: 8px;
+  padding: 4px 0;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #ffffff;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #4a505c;
+}
+
+#tombol-google img {
+  width: 15px;
+  height: 20px;
+  padding: 2px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4a505c;
+  padding: 5px;
+}
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+.divider:not(:empty)::before {
+  margin-right: 0.75em;
+}
+.divider:not(:empty)::after {
+  margin-left: 0.75em;
+}
