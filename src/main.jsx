@@ -1,14 +1,17 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import Home from "./pages/Home.jsx";
+import "./styles/index.css";
 import { BrowserRouter, Route, Routes } from "react-router";
+import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
+import Container from "./components/Container.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
+    <Container>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Container>
   </BrowserRouter>
 );
