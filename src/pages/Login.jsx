@@ -3,21 +3,23 @@ import "../styles/login.css";
 const Login = () => {
   return (
     <main>
-      <div class="main-box">
-        <div class="main-box-title">
-          <h3 class="title">Masuk ke Akun</h3>
+      <div className="main-box">
+        <div className="main-box-title">
+          <h3 className="title">Masuk ke Akun</h3>
 
-          <p class="description">Yuk, lanjutin belajarmu di videobelajar.</p>
+          <p className="description">
+            Yuk, lanjutin belajarmu di videobelajar.
+          </p>
         </div>
 
         <form>
-          <fieldset class="main-box-content">
-            <div class="box-input">
-              <label for="email">
-                E-Mail<span class="litleicon">*</span>
+          <fieldset className="main-box-content">
+            <div className="box-input">
+              <label htmlFor="email">
+                E-Mail<span className="litleicon">*</span>
               </label>
               <input
-                class="boxformInput"
+                className="boxformInput"
                 type="email"
                 name="email"
                 id="email"
@@ -25,26 +27,26 @@ const Login = () => {
               />
             </div>
 
-            <div class="box-input">
-              <label for="password">
-                Kata Sandi<span class="litleicon">*</span>
+            <div className="box-input">
+              <label htmlFor="password">
+                Kata Sandi<span className="litleicon">*</span>
               </label>
-              <div class="box-input-password">
+              <div className="box-input-password">
                 <input
-                  class="boxformInput"
+                  className="boxformInput"
                   type="password"
                   name="password"
                   id="password"
                   placeholder="Masukkan Kata Sandi"
                 />
-                <img src="./icons/hidden.png" alt="" srcset="" />
+                <img src="./icons/hidden.png" alt="" />
               </div>
-              <a class="forgotPassword" href="#">
+              <a className="forgotPassword" href="/#">
                 Lupa password?
               </a>
             </div>
 
-            <div class="box-login-register">
+            <div className="box-login-register">
               <button id="tombol-masuk" type="button">
                 Masuk
               </button>
@@ -53,7 +55,7 @@ const Login = () => {
               </button>
 
               <div>
-                <span class="divider">atau</span>
+                <span className="divider">atau</span>
               </div>
 
               <button id="tombol-google" type="button">

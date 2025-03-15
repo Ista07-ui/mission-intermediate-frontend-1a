@@ -10,8 +10,8 @@ const Navbar = () => {
           <div className="dropdown">
             <button className="dropbtn">Kategori</button>
             <div className="dropdown-content">
-              <a href="register.html">Register</a>
-              <a href="login.html">Login</a>
+              <a href="/register">Register</a>
+              <a href="/login">Login</a>
             </div>
           </div>
 

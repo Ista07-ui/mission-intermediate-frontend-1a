@@ -1,4 +1,4 @@
-import "../styles/login.css";
+import "../styles/register.css";
 
 const Register = () => {
   return (
@@ -15,7 +15,7 @@ const Register = () => {
         <form>
           <fieldset className="main-box-content">
             <div className="box-input">
-              <label for="nama-lengkap">
+              <label htmlFor="nama-lengkap">
                 Nama Lengkap<span className="litleicon">*</span>
               </label>
               <input
@@ -28,7 +28,7 @@ const Register = () => {
             </div>
 
             <div className="box-input">
-              <label for="email">
+              <label htmlFor="email">
                 E-Mail<span className="litleicon">*</span>
               </label>
               <input
@@ -41,7 +41,7 @@ const Register = () => {
             </div>
 
             <div className="box-input">
-              <label for="country-code">
+              <label htmlFor="country-code">
                 No. HP<span className="litleicon">*</span>
               </label>
               <div className="phone-input">
@@ -65,7 +65,7 @@ const Register = () => {
             </div>
 
             <div className="box-input">
-              <label for="password">
+              <label htmlFor="password">
                 Kata Sandi<span className="litleicon">*</span>
               </label>
               <div className="box-input-password">
@@ -76,12 +76,12 @@ const Register = () => {
                   id="password"
                   placeholder="Masukkan Kata Sandi"
                 />
-                <img src="./icons/hidden.png" alt="" srcset="" />
+                <img src="./icons/hidden.png" alt="" />
               </div>
             </div>
 
             <div className="box-input">
-              <label for="confirm-passwor">
+              <label htmlFor="confirm-passwor">
                 Konfirmasi Kata Sandi<span className="litleicon">*</span>
               </label>
               <div className="box-input-password">
@@ -92,10 +92,10 @@ const Register = () => {
                   id="confirm-passwor"
                   placeholder="Konfirmasi Kata Sandi"
                 />
-                <img src="./icons/hidden.png" alt="" srcset="" />
+                <img src="./icons/hidden.png" alt="" />
               </div>
 
-              <a className="forgotPassword" href="#">
+              <a className="forgotPassword" href="/#">
                 Lupa password?
               </a>
             </div>
