@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 const Navbar = () => {
   return (
     <nav className="navigation-bar">
@@ -10,8 +11,8 @@ const Navbar = () => {
           <div className="dropdown">
             <button className="dropbtn">Kategori</button>
             <div className="dropdown-content">
-              <a href="/register">Register</a>
-              <a href="/login">Login</a>
+              <Link to="/register">Register</Link>
+              <Link to="/login">Login</Link>
             </div>
           </div>
 
