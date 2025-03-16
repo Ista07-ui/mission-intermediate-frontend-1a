@@ -3,9 +3,9 @@ const Navbar = () => {
   return (
     <nav className="navigation-bar">
       <div className="navigation-bar-container">
-        <a href="/">
+        <Link to="/">
           <img className="logo" src="/images/logo.png" alt="Logo" />
-        </a>
+        </Link>
 
         <div className="navigation-bar-links">
           <div className="dropdown">
