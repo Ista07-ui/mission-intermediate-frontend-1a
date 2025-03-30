@@ -1,6 +1,64 @@
+import { useState } from "react";
 import "../styles/register.css";
+import { useNavigate } from "react-router";
+import InputLabelText from "../components/InputLabelText";
+import InputNoHp from "../components/InputNoHp";
+import InputPass from "../components/InpusPass";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+
+  const setValueName = (event) => {
+    setName(event.target.value);
+  };
+
+  const submitFormPendaftaran = () => {
+    console.log(name, email, nohp, password, confirmPass);
+
+    if (
+      name === "" ||
+      email === "" ||
+      nohp === "" ||
+      password === "" ||
+      confirmPass === ""
+    ) {
+      alert("Data Lengkap Tidak Boleh Kosong");
+      return;
+    }
+
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("nohp", nohp);
+    localStorage.setItem("password", password);
+
+    navigate("/profile");
+  };
+
+  const [email, setEmail] = useState("");
+
+  const setValueEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const [nohp, setNohp] = useState("");
+
+  const setValueNohp = (event) => {
+    setNohp(event.target.value);
+  };
+
+  const [password, setPassword] = useState("");
+
+  const setValuePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const [confirmPass, setConfirmPass] = useState("");
+
+  const setValueConfirmPass = (event) => {
+    setConfirmPass(event.target.value);
+  };
+
   return (
     <main>
       <div className="main-box">
@@ -11,100 +69,63 @@ const Register = () => {
             Yuk, lanjutin belajarmu di videobelajar.
           </p>
         </div>
-
         <form>
           <fieldset className="main-box-content">
-            <div className="box-input">
-              <label htmlFor="nama-lengkap">
-                Nama Lengkap<span className="litleicon">*</span>
-              </label>
-              <input
-                className="boxformInput"
-                type="text"
-                name="nama-lengkap"
-                id="nama-lengkap"
-                placeholder="Masukkan Nama Lengkap"
-              />
-            </div>
+            <InputLabelText
+              labelValue="Nama Lengkap"
+              inputId="nama-lengkap"
+              placeholder="Masukkan Nama Lengkap"
+              type="text"
+              // value untuk menampilkan data dari state name
+              value={name}
+              onChange={setValueName}
+              // onChange untuk mengambil data dari input disetiap perubahan value
+            />
+
+            <InputLabelText
+              labelValue="E-mail"
+              inputId="email"
+              placeholder="Masukkan E-Mail"
+              type="email"
+              value={email}
+              onChange={setValueEmail}
+            />
+
+            <InputNoHp nohp={nohp} setValueNohp={setValueNohp} />
+
+            <InputPass name={password} setValuePassword={setValuePassword} />
 
             <div className="box-input">
-              <label htmlFor="email">
-                E-Mail<span className="litleicon">*</span>
-              </label>
-              <input
-                className="boxformInput"
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Masukkan E-Mail"
-              />
-            </div>
-
-            <div className="box-input">
-              <label htmlFor="country-code">
-                No. HP<span className="litleicon">*</span>
-              </label>
-              <div className="phone-input">
-                <div className="phone-country-flag">
-                  <img src="./icons/indonesia.png" alt="" />
-                  <select name="country" id="country-code">
-                    <option value="indonesia">+62</option>
-                    <option value="singapore">+1</option>
-                    <option value="malaysia">+2</option>
-                  </select>
-                </div>
-                <input
-                  className="boxformInput"
-                  type="text"
-                  id="phone-number"
-                  name="phone-number"
-                  placeholder="123-456-7890"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="box-input">
-              <label htmlFor="password">
-                Kata Sandi<span className="litleicon">*</span>
-              </label>
-              <div className="box-input-password">
-                <input
-                  className="boxformInput"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Masukkan Kata Sandi"
-                />
-                <img src="./icons/hidden.png" alt="" />
-              </div>
-            </div>
-
-            <div className="box-input">
-              <label htmlFor="confirm-passwor">
+              <label htmlFor="confirm-password">
                 Konfirmasi Kata Sandi<span className="litleicon">*</span>
               </label>
               <div className="box-input-password">
                 <input
                   className="boxformInput"
                   type="password"
-                  name="confirm-passwor"
-                  id="confirm-passwor"
+                  name="confirm-password"
+                  id="confirm-password"
                   placeholder="Konfirmasi Kata Sandi"
+                  value={confirmPass}
+                  onChange={setValueConfirmPass}
                 />
-                <img src="./icons/hidden.png" alt="" />
+                <img src="./icons/hidden.png" alt="s" />
               </div>
-
-              <a className="forgotPassword" href="/#">
-                Lupa password?
-              </a>
             </div>
+
+            <a className="forgotPassword" href="/#">
+              Lupa password?
+            </a>
 
             <div className="box-login-register">
               <button id="tombol-masuk" type="button">
                 Masuk
               </button>
-              <button id="tombol-daftar" type="button">
+              <button
+                id="tombol-daftar"
+                type="button"
+                onClick={submitFormPendaftaran}
+              >
                 Daftar
               </button>
 

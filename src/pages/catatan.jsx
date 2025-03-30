@@ -1,34 +1,6 @@
-import { useState } from "react";
 import "../styles/login.css";
-import { useNavigate } from "react-router";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const setValueEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const setValuePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const submitFormMasuk = () => {
-    console.log(email, password);
-
-    if (email === "" || password === "") {
-      alert("Data Lengkap Tidak Boleh Kosong");
-      return;
-    }
-
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
-
-    navigate("/");
-  };
-
   return (
     <main>
       <div className="main-box">
@@ -52,8 +24,6 @@ const Login = () => {
                 name="email"
                 id="email"
                 placeholder="Masukkan E-Mail"
-                value={email}
-                onChange={setValueEmail}
               />
             </div>
 
@@ -68,8 +38,6 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="Masukkan Kata Sandi"
-                  value={password}
-                  onChange={setValuePassword}
                 />
                 <img src="./icons/hidden.png" alt="" />
               </div>
@@ -79,7 +47,7 @@ const Login = () => {
             </div>
 
             <div className="box-login-register">
-              <button id="tombol-masuk" type="button" onClick={submitFormMasuk}>
+              <button id="tombol-masuk" type="button">
                 Masuk
               </button>
               <button id="tombol-daftar" type="button">
