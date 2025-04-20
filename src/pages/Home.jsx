@@ -1,6 +1,37 @@
 import "../styles/home.css";
+import React from "react";
+import CardItem from "../components/CardItem";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Home() {
+  const [products, setProduct] = useState([]);
+  const API_URL = import.meta.env.VITE_API_URL;
+
+  // useEffect(() => {
+  //   fetch(`${API_URL}/api/course/products`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       setProduct(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // }, [API_URL]);
+
+  useEffect(() => {
+    axios
+      .get(`${API_URL}/api/course/products`)
+      .then((response) => {
+        // console.log("Data dari API:", response.data);
+        setProduct(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }, [API_URL]);
+
   return (
     <>
       <main>
@@ -36,25 +67,44 @@ function Home() {
             </p>
           </div>
           <div className="tabs">
-            <div className="tabLink">
-              <div className="tabLinkTitle">Semua Kelas</div>
-              <div className="tabUnderline"></div>
+            <div className="customFlex">
+              <div className="tabLink">
+                <div className="tabLinkTitle">Semua Kelas</div>
+                <div className="tabUnderline"></div>
+              </div>
+
+              <div className="tabLink">
+                <a href="a" className="tabText">
+                  Pemasaran
+                </a>
+              </div>
+
+              <div className="tabLink">
+                <a href="a" className="tabText">
+                  Desain
+                </a>
+              </div>
+
+              <div className="tabLink">
+                <a href="a" className="tabText">
+                  Pengembangan Diri
+                </a>
+              </div>
+
+              <div className="tabLink">
+                <a href="a" className="tabText">
+                  Bisnis
+                </a>
+              </div>
             </div>
 
-            <div className="tabLink">
-              <div className="tabText">Pemasaran</div>
-            </div>
-
-            <div className="tabLink">
-              <div className="tabText">Desain</div>
-            </div>
-
-            <div className="tabLink">
-              <div className="tabText">Pengembangan Diri</div>
-            </div>
-
-            <div className="tabLink">
-              <div className="tabText">Bisnis</div>
+            <div className="admin-button-wrapper">
+              <button
+                className="admin-button"
+                onClick={() => (window.location.href = "/admin")}
+              >
+                Admin
+              </button>
             </div>
           </div>
 
@@ -692,6 +742,682 @@ function Home() {
                 <p className="point-K">Rp 300K</p>
               </div>
             </div>
+
+            {/* <div className="card-item">
+              <img alt="" className="card-image" src="/images/Analis LK.png" />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (1).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/AkuntansiManagement.png"
+              />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (2).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/AkuntansiMenengah.png"
+              />
+              <div className="avatar-cardLittle">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (3).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/AuditInternal.png"
+              />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (4).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/PerpajakanAkun.png"
+              />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (5).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-littl">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/Akuntansi (UMKM).png"
+              />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (6).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img alt="" className="card-image" src="/images/softwareAk.png" />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (7).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/AkuntansiManagement.png"
+              />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (8).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>
+
+             <div className="card-item">
+              <img
+               alt=""
+               className="card-image"
+               src="/images/EtikaProfesiAkuntansi.png"
+              />
+              <div className="card-description">
+               <h6 className="text-title">Big 4 Auditor Financial Analyst</h6>
+               <p className="card-textLittle">
+                Mulai transformasi dengan instruktur profesional, harga yang
+                terjangkau, dan kurikulum terbaik
+               </p>
+              </div>
+              <div className="card-avatar">
+               <img
+                alt=""
+                className="avatar-img"
+                src="./icons/Avatar (9).png"
+               />
+               <div className="avatar-cardLittle">
+                <p className="avatar-title">Jenna Ortega</p>
+                <div className="avatar-little">
+                 <p className="avatarText-little">
+                  Senior Accountant di Gojek
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div className="card-point">
+               <div className="point-box">
+                <div className="point-boxLittle">
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starYellow.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         style={{ width: "22px", height: "22px" }}
+                         className="star-img"
+                         src="./icons/maskedStar.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                 <div>
+                  <img
+                         className="star-img"
+                         src="./icons/starGrey.png"
+                         alt=""
+                  />
+                 </div>
+                </div>
+                <div className="point-number">3.5 (86)</div>
+               </div>
+               <p className="point-K">Rp 300K</p>
+              </div>
+             </div>  */}
+
+            {products.map((product) => (
+              <CardItem
+                key={product.id}
+                id={product.id}
+                title={product.title}
+                subtitle={product.subtitle}
+                avatar={product.avatar}
+                mentor={product.mentor}
+                rolementor={product.rolementor}
+                price={product.price}
+                photo={product.photo}
+              />
+            ))}
           </div>
         </section>
 

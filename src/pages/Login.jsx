@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,14 +20,28 @@ const Login = () => {
     console.log(email, password);
 
     if (email === "" || password === "") {
-      alert("Data Lengkap Tidak Boleh Kosong");
+      alert("Email dan Password tidak boleh kosong");
       return;
     }
 
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
+    // Ambil data users dari localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    console.log("Data users di localStorage:", existingUsers);
 
-    navigate("/");
+    // Cari user yang cocok
+    const foundUser = existingUsers.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (foundUser) {
+      alert("Login berhasil!");
+      localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+      navigate("/profile");
+    } else {
+      alert("Email atau password salah");
+      localStorage.setItem("email", email),
+        localStorage.setItem("password", password);
+    }
   };
 
   return (

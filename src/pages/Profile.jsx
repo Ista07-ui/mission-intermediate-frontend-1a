@@ -41,7 +41,7 @@ const Profile = () => {
               <div className="boxSection">
                 <div className="sectionLittle-yellow">
                   <div className="sectionImg">
-                    <img alt="" src="./public/icons/Person.png" />
+                    <img alt="" src="/icons/Person.png" />
                   </div>
                   <div className="sectionText-yellow">Profil Saya</div>
                 </div>
@@ -68,7 +68,7 @@ const Profile = () => {
           <section>
             <div className="frame-boxTwo">
               <div className="box-profile">
-                <img alt="" src="./images/Avatarprofile.png" />
+                <img alt="" src="/images/Avatarprofile.png" />
                 <div className="box-profileText">
                   <h5 className="profileHeading">{name}</h5>
                   <p className="profileEmail">{email}</p>
@@ -84,7 +84,12 @@ const Profile = () => {
                       <div className="profileForm-legend">Nama Lengkap</div>
                     </legend>
                     <div className="profileForm-size">
-                      <input className="profileForm-little" value={name} />
+                      {/* <input className="profileForm-little" value={name} /> */}
+                      <input
+                        className="profileForm-little"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
                       <div
                         style={{
                           display: "flex",
@@ -109,10 +114,16 @@ const Profile = () => {
                       <div className="profileForm-legend">E-mail</div>
                     </legend>
                     <div className="profileForm-size">
+                      {/* <input
+                        type="email"
+                        className="profileForm-little"
+                        value={email}
+                      /> */}
                       <input
                         type="email"
                         className="profileForm-little"
                         value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                       <div
                         style={{
@@ -141,9 +152,7 @@ const Profile = () => {
                           id="phone"
                           className="profileForm-little"
                         >
-                          <option selected value="indonesia">
-                            +62
-                          </option>
+                          <option value="indonesia">+62</option>
                         </select>
                       </div>
                     </fieldset>
@@ -162,7 +171,12 @@ const Profile = () => {
                         </div>
                       </legend>
                       <div className="profileForm-size">
-                        <input className="profileForm-little" value={nohp} />
+                        {/* <input className="profileForm-little" value={nohp} /> */}
+                        <input
+                          className="profileForm-little"
+                          value={nohp}
+                          onChange={(e) => setNohp(e.target.value)}
+                        />
                         <div
                           style={{
                             display: "flex",

@@ -3,19 +3,38 @@ import "../styles/register.css";
 import { useNavigate } from "react-router";
 import InputLabelText from "../components/InputLabelText";
 import InputNoHp from "../components/InputNoHp";
-import InputPass from "../components/InpusPass";
+import InputPass from "../components/InputPass";
 
+// State untuk input form
 const Register = () => {
   const navigate = useNavigate();
+
+  // State untuk input form
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [nohp, setNohp] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPass, setConfirmPass] = useState("");
 
   const setValueName = (event) => {
     setName(event.target.value);
   };
+  const setValueEmail = (event) => {
+    setEmail(event.target.value);
+  };
+  const setValueNohp = (event) => {
+    setNohp(event.target.value);
+  };
+  const setValuePassword = (event) => {
+    setPassword(event.target.value);
+  };
+  const setValueConfirmPass = (event) => {
+    setConfirmPass(event.target.value);
+  };
 
   const submitFormPendaftaran = () => {
     console.log(name, email, nohp, password, confirmPass);
-
+    // Validasi form kosong
     if (
       name === "" ||
       email === "" ||
@@ -27,36 +46,31 @@ const Register = () => {
       return;
     }
 
+    // Validasi konfirmasi password
+    if (password !== confirmPass) {
+      alert("Password dan Konfirmasi Password tidak sama");
+      return;
+    }
+
+    // Ambil data users dari localStorage
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Buat data user baru
+    const newUser = { name, email, nohp, password };
+
+    // Tambahkan ke array user
+    existingUsers.push(newUser);
+
+    localStorage.setItem("users", JSON.stringify(existingUsers));
+
+    // Simpan kembali ke localStorage
     localStorage.setItem("name", name);
     localStorage.setItem("email", email);
     localStorage.setItem("nohp", nohp);
     localStorage.setItem("password", password);
 
-    navigate("/profile");
-  };
-
-  const [email, setEmail] = useState("");
-
-  const setValueEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const [nohp, setNohp] = useState("");
-
-  const setValueNohp = (event) => {
-    setNohp(event.target.value);
-  };
-
-  const [password, setPassword] = useState("");
-
-  const setValuePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const [confirmPass, setConfirmPass] = useState("");
-
-  const setValueConfirmPass = (event) => {
-    setConfirmPass(event.target.value);
+    alert("Registrasi berhasil!");
+    navigate("/login");
   };
 
   return (

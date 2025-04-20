@@ -39,6 +39,8 @@ const Navbar = () => {
             <div className="dropdown-content">
               <Link to="/register">Register</Link>
               <Link to="/login">Login</Link>
+              <Link to="/profile">Profile</Link>
+              <Link to="/">Home</Link>
               <a href="/" onClick={handleLogout}>
                 <span>Logout</span>
               </a>
