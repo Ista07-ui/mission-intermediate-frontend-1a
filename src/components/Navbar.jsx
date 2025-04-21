@@ -41,6 +41,7 @@ const Navbar = () => {
               <Link to="/login">Login</Link>
               <Link to="/profile">Profile</Link>
               <Link to="/">Home</Link>
+              <Link to="/admin">Admin</Link>
               <a href="/" onClick={handleLogout}>
                 <span>Logout</span>
               </a>
