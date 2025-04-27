@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import InputLabelText from "../components/InputLabelText";
 import InputNoHp from "../components/InputNoHp";
 import InputPass from "../components/InputPass";
+import { toast } from "react-toastify";
 
 // State untuk input form
 const Register = () => {
@@ -42,13 +43,20 @@ const Register = () => {
       password === "" ||
       confirmPass === ""
     ) {
-      alert("Data Lengkap Tidak Boleh Kosong");
+      toast.error("Data Lengkap Tidak Boleh Kosong");
+      return;
+    }
+
+    // Validasi email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Email tidak valid");
       return;
     }
 
     // Validasi konfirmasi password
     if (password !== confirmPass) {
-      alert("Password dan Konfirmasi Password tidak sama");
+      toast.error("Password dan Konfirmasi Password tidak sama");
       return;
     }
 
@@ -63,13 +71,7 @@ const Register = () => {
 
     localStorage.setItem("users", JSON.stringify(existingUsers));
 
-    // Simpan kembali ke localStorage
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("nohp", nohp);
-    localStorage.setItem("password", password);
-
-    alert("Registrasi berhasil!");
+    toast.success("Registrasi berhasil!");
     navigate("/login");
   };
 

@@ -8,6 +8,9 @@ export default function CardItem({
   mentor,
   rolementor,
   price,
+  isEdit,
+  handleEdit,
+  handleDelete,
 }) {
   return (
     <div className="card-item">
@@ -53,8 +56,19 @@ export default function CardItem({
           </div>
           <p className="point-number">3.5 (86)</p>
         </div>
-        <p className="point-K">Rp {price}</p>
+        <p className="point-K">$ {price}</p>
       </div>
+
+      {isEdit && (
+        <div className="card-buttons">
+          <button className="btn-edit" onClick={handleEdit}>
+            Edit
+          </button>
+          <button className="btn-delete" onClick={handleDelete}>
+            Hapus
+          </button>
+        </div>
+      )}
     </div>
   );
 }

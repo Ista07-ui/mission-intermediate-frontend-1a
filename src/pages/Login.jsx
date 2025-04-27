@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/login.css";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = () => {
     console.log(email, password);
 
     if (email === "" || password === "") {
-      alert("Email dan Password tidak boleh kosong");
+      toast.error("Email dan Password tidak boleh kosong");
       return;
     }
 
@@ -34,13 +35,13 @@ const Login = () => {
     );
 
     if (foundUser) {
-      alert("Login berhasil!");
+      toast.success("Login berhasil!");
       localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
       navigate("/profile");
     } else {
-      alert("Email atau password salah");
-      localStorage.setItem("email", email),
-        localStorage.setItem("password", password);
+      toast.error("Email atau password salah");
+      localStorage.setItem("email", email);
+      localStorage.setItem("password", password);
     }
   };
 
@@ -97,7 +98,11 @@ const Login = () => {
               <button id="tombol-masuk" type="button" onClick={submitFormMasuk}>
                 Masuk
               </button>
-              <button id="tombol-daftar" type="button">
+              <button
+                id="tombol-daftar"
+                type="button"
+                onClick={() => navigate("/register")}
+              >
                 Daftar
               </button>
 

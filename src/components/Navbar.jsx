@@ -2,25 +2,25 @@ import { Link, useNavigate } from "react-router";
 const Navbar = () => {
   const navigation = useNavigate();
   const ReadData = () => {
-    const nama = localStorage.getItem("name");
-    const email = localStorage.getItem("email");
-    const nohp = localStorage.getItem("nohp");
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (!loggedInUser) return { name: "", email: "", nohp: "" };
 
+    const { name, email, nohp } = JSON.parse(loggedInUser);
     console.log({
-      nama,
+      name,
       email,
       nohp,
     });
 
     return {
-      nama: nama,
+      name: name,
       email: email,
       nohp: nohp,
     };
   };
 
   const handleLogout = () => {
-    localStorage.clear();
+    localStorage.removeItem("loggedInUser");
 
     navigation("/");
   };
@@ -34,17 +34,24 @@ const Navbar = () => {
 
         <div className="navigation-bar-links">
           <div className="dropdown">
-            <p>{ReadData().nama}</p>
+            <p>{ReadData().name}</p>
             <button className="dropbtn">Kategori</button>
             <div className="dropdown-content">
-              <Link to="/register">Register</Link>
-              <Link to="/login">Login</Link>
-              <Link to="/profile">Profile</Link>
-              <Link to="/">Home</Link>
-              <Link to="/admin">Admin</Link>
-              <a href="/" onClick={handleLogout}>
-                <span>Logout</span>
-              </a>
+              {ReadData().name ? (
+                <>
+                  <Link to="/">Home</Link>
+                  <Link to="/admin">Admin</Link>
+                  <Link to="/profile">Profile</Link>
+                  <a href="/" onClick={handleLogout}>
+                    <span>Logout</span>
+                  </a>
+                </>
+              ) : (
+                <>
+                  <Link to="/register">Register</Link>
+                  <Link to="/login">Login</Link>
+                </>
+              )}
             </div>
           </div>
 

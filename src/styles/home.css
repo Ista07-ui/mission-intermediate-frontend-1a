@@ -239,6 +239,8 @@ a {
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 1rem;
+  object-position: center;
+  height: 13rem;
 }
 
 .card-description {
@@ -343,6 +345,7 @@ a {
   font-size: 1.5rem;
   color: #3ecf4c;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .frame2-background {

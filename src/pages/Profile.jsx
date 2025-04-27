@@ -8,14 +8,14 @@ const Profile = () => {
 
   function getDataFromLocalStorage() {
     // ambil data dari localStorage dengan key "name"
-    const userName = localStorage.getItem("name");
-    const userEmail = localStorage.getItem("email");
-    const userNohp = localStorage.getItem("nohp");
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    if (!loggedInUser) return { name: "", email: "", nohp: "" };
 
+    const { name, email, nohp } = JSON.parse(loggedInUser);
     // simpan data username ke state name
-    setName(userName);
-    setEmail(userEmail);
-    setNohp(userNohp);
+    setName(name);
+    setEmail(email);
+    setNohp(nohp);
   }
 
   // ketika komponen ini (Profile) muncul dilayar
